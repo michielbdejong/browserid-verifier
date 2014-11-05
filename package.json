@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "async": "0.9.0",
-    "browserid-local-verify": "0.1.0",
+    "browserid-local-verify": "vladikoff/browserid-local-verify#0dd1c3e7a5609333",
     "compute-cluster": "0.0.9",
     "convict": "0.5.1",
     "express": "3.8.1",
