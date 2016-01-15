@@ -1,0 +1,16 @@
+FROM vladikoff/fxa-slim-image:latest
+
+RUN adduser --disabled-password --gecos '' fxa && adduser fxa sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+COPY . /home/fxa/browserid-verifier
+WORKDIR /home/fxa/browserid-verifier
+RUN chown -R fxa .
+USER fxa
+
+RUN npm install --production \
+  && npm cache clear
+
+CMD npm start
+
+# Expose ports
+EXPOSE 5050
